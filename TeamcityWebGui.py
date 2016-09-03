@@ -27,11 +27,14 @@ class TeamcityWebGui(object):
         try:
             print("DEBUG - try login to Teamcity")
             driver.get("{}/login.html".format(self.teamcityURL))
-            username = driver.find_element_by_id("username")
-            username.send_keys(username)
-            password = driver.find_element_by_id("password")
-            password.send_keys(password)
-            password.send_keys(Keys.RETURN)
+            time.sleep(2)
+
+            username_field = driver.find_element_by_id("username")
+            username_field.send_keys(self.username)
+            password_field = driver.find_element_by_id("password")
+            password_field.send_keys(self.password)
+            password_field.send_keys(Keys.RETURN)
+
             time.sleep(3)
 
             allCookies = driver.get_cookies()
@@ -109,3 +112,4 @@ class TeamcityWebGui(object):
             pass_str,
             url_str[i + 2:],
         )
+
