@@ -1,4 +1,7 @@
 Workaround for https://youtrack.jetbrains.com/issue/TW-21447
+
+TeamCity REST API: move configuration between projects
+
 ## Functional
 1. Move Configuration to other Project
 2. That's all for now :)
